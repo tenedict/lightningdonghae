@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageView: View {
     @State private var favoriteSpots: [String] = [] // 좋아요 한 관광지 리스트
     
+    
     var body: some View {
         VStack {
             Text("마이페이지")

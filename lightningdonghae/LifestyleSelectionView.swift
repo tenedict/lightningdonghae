@@ -8,38 +8,40 @@ import SwiftUI
 
 struct LifestyleSelectionView: View {
     var body: some View {
-        VStack(spacing: 20) {
-            HStack {
-                Button(action: {
-                    // 라이프스타일 선택 액션
-                }) {
-                    VStack {
-                        Image(systemName: "leaf.fill")
-                            .font(.largeTitle)
-                        Text("라이프스타일 선택")
+        NavigationStack{
+            VStack(spacing: 20) {
+                HStack {
+                    // NavigationLink로 라이프스타일 버튼을 감싸서 클릭 시 상세 화면으로 이동하게 만듦
+                    NavigationLink(destination: LifestyleDetailView()) {
+                        VStack {
+                            Image(systemName: "leaf.fill")
+                                .font(.largeTitle)
+                            Text("라이프스타일 선택")
+                        }
+                        .frame(width: 150, height: 150)
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                     }
-                    .frame(width: 150, height: 150)
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                }
-
-                Button(action: {
-                    // 도착역 선택 액션
-                }) {
-                    VStack {
-                        Image(systemName: "train.side.front.car.fill")
-                            .font(.largeTitle)
-                        Text("도착역 선택")
+                    
+                    Button(action: {
+                        // 도착역 선택 액션
+                    }) {
+                        VStack {
+                            Image(systemName: "train.side.front.car.fill")
+                                .font(.largeTitle)
+                            Text("도착역 선택")
+                        }
+                        .frame(width: 150, height: 150)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                     }
-                    .frame(width: 150, height: 150)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
                 }
+                .padding()
+                
+                Spacer()
             }
-            Spacer()
         }
-        .padding()
     }
 }
