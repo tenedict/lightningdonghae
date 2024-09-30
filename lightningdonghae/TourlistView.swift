@@ -39,7 +39,7 @@ struct TourlistView: View {
                return touristSpots
            } else {
                return touristSpots.filter { spot in
-                   spot.name.contains(searchText) || spot.address.contains(searchText)
+                   spot.name.contains(searchText) || spot.address.contains(searchText) || spot.nearestSubway.contains(searchText)
                }
            }
        }
