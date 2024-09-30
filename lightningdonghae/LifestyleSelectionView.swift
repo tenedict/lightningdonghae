@@ -24,19 +24,18 @@ struct LifestyleSelectionView: View {
                         .cornerRadius(10)
                     }
                     
-                    Button(action: {
-                        // 도착역 선택 액션
-                    }) {
-                        VStack {
-                            Image(systemName: "train.side.front.car.fill")
-                                .font(.largeTitle)
-                            Text("도착역 선택")
-                        }
-                        .frame(width: 150, height: 150)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                    }
+                    NavigationLink(destination: TrainScheduleView(), label: {
+                            VStack {
+                                Image(systemName: "train.side.front.car.fill")
+                                    .font(.largeTitle)
+                                Text("도착역 선택")
+                            }
+                            .frame(width: 150, height: 150)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    })
+                  
                 }
                 .padding()
                 

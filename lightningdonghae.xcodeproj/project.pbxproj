@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61696CBB2CA83D210070AE43 /* 평일상행.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61696CB92CA83D210070AE43 /* 평일상행.csv */; };
+		61696CBC2CA83D210070AE43 /* 평일하행.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61696CBA2CA83D210070AE43 /* 평일하행.csv */; };
+		61696CBF2CA83D2F0070AE43 /* 휴일상행.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61696CBD2CA83D2F0070AE43 /* 휴일상행.csv */; };
+		61696CC02CA83D2F0070AE43 /* 휴일하행.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61696CBE2CA83D2F0070AE43 /* 휴일하행.csv */; };
+		61696CC22CA83F8B0070AE43 /* LoadCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61696CC12CA83F8B0070AE43 /* LoadCSV.swift */; };
+		61696CC42CA840BB0070AE43 /* TrainScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61696CC32CA840BB0070AE43 /* TrainScheduleView.swift */; };
 		9D1B3B902CA2BDF10070B0FB /* LifestyleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */; };
 		9D1B3B922CA2BDFA0070B0FB /* SubwayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */; };
 		9D1B3B942CA2BE130070B0FB /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B932CA2BE110070B0FB /* MyPageView.swift */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61696CB92CA83D210070AE43 /* 평일상행.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "평일상행.csv"; path = "../../../../../Downloads/평일상행.csv"; sourceTree = "<group>"; };
+		61696CBA2CA83D210070AE43 /* 평일하행.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "평일하행.csv"; path = "../../../../../Downloads/평일하행.csv"; sourceTree = "<group>"; };
+		61696CBD2CA83D2F0070AE43 /* 휴일상행.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "휴일상행.csv"; path = "../../../../../Downloads/휴일상행.csv"; sourceTree = "<group>"; };
+		61696CBE2CA83D2F0070AE43 /* 휴일하행.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "휴일하행.csv"; path = "../../../../../Downloads/휴일하행.csv"; sourceTree = "<group>"; };
+		61696CC12CA83F8B0070AE43 /* LoadCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCSV.swift; sourceTree = "<group>"; };
+		61696CC32CA840BB0070AE43 /* TrainScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainScheduleView.swift; sourceTree = "<group>"; };
 		9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleSelectionView.swift; sourceTree = "<group>"; };
 		9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayMapView.swift; sourceTree = "<group>"; };
 		9D1B3B932CA2BE110070B0FB /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
@@ -65,6 +77,12 @@
 				9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */,
 				9D87200F2CA2B86400755EEB /* lightningdonghaeApp.swift */,
 				9D8720112CA2B86400755EEB /* ContentView.swift */,
+				61696CC32CA840BB0070AE43 /* TrainScheduleView.swift */,
+				61696CC12CA83F8B0070AE43 /* LoadCSV.swift */,
+				61696CB92CA83D210070AE43 /* 평일상행.csv */,
+				61696CBA2CA83D210070AE43 /* 평일하행.csv */,
+				61696CBD2CA83D2F0070AE43 /* 휴일상행.csv */,
+				61696CBE2CA83D2F0070AE43 /* 휴일하행.csv */,
 				9D8720132CA2B86500755EEB /* Assets.xcassets */,
 				9D8720152CA2B86500755EEB /* Preview Content */,
 			);
@@ -138,7 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D8720172CA2B86500755EEB /* Preview Assets.xcassets in Resources */,
+				61696CC02CA83D2F0070AE43 /* 휴일하행.csv in Resources */,
+				61696CBB2CA83D210070AE43 /* 평일상행.csv in Resources */,
 				9D8720142CA2B86500755EEB /* Assets.xcassets in Resources */,
+				61696CBF2CA83D2F0070AE43 /* 휴일상행.csv in Resources */,
+				61696CBC2CA83D210070AE43 /* 평일하행.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,12 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61696CC42CA840BB0070AE43 /* TrainScheduleView.swift in Sources */,
 				9D1B3B962CA2DD660070B0FB /* LifestyleDetailView.swift in Sources */,
 				9D1B3B902CA2BDF10070B0FB /* LifestyleSelectionView.swift in Sources */,
 				9D8720122CA2B86400755EEB /* ContentView.swift in Sources */,
 				9D1B3B942CA2BE130070B0FB /* MyPageView.swift in Sources */,
 				9D1B3B922CA2BDFA0070B0FB /* SubwayMapView.swift in Sources */,
 				9D8720102CA2B86400755EEB /* lightningdonghaeApp.swift in Sources */,
+				61696CC22CA83F8B0070AE43 /* LoadCSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lightningdonghae/Preview Content\"";
-				DEVELOPMENT_TEAM = UW9295Z57Q;
+				DEVELOPMENT_TEAM = TA9TKWGKS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -317,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lightningdonghae/Preview Content\"";
-				DEVELOPMENT_TEAM = UW9295Z57Q;
+				DEVELOPMENT_TEAM = TA9TKWGKS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
