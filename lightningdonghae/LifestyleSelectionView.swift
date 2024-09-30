@@ -8,40 +8,45 @@ import SwiftUI
 
 struct LifestyleSelectionView: View {
     var body: some View {
-        NavigationStack{
-            VStack(spacing: 20) {
-                HStack {
-                    // NavigationLink로 라이프스타일 버튼을 감싸서 클릭 시 상세 화면으로 이동하게 만듦
-                    NavigationLink(destination: LifestyleDetailView()) {
-                        VStack {
-                            Image(systemName: "leaf.fill")
-                                .font(.largeTitle)
-                            Text("라이프스타일 선택")
-                        }
-                        .frame(width: 150, height: 150)
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                    }
-                    
-                    Button(action: {
-                        // 도착역 선택 액션
-                    }) {
-                        VStack {
-                            Image(systemName: "train.side.front.car.fill")
-                                .font(.largeTitle)
-                            Text("도착역 선택")
-                        }
-                        .frame(width: 150, height: 150)
+        NavigationStack {
+            VStack(spacing: 10) {
+                
+                NavigationLink(destination: StampMapView()) {
+                    Text("스탬프 맵")
+                        .font(.title)
+                        .frame(width: 300,height: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(.horizontal, 100)
+                }
+                HStack {
+                    // NavigationLink로 라이프스타일 버튼을 감싸서 클릭 시 상세 화면으로 이동하게 만듦
+                    NavigationLink(destination: TourlistView()) {
+                        Text("투어 리스트")
+                            .font(.title)
+                            .frame(width: 150, height: 150)
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+
+                    
+                    NavigationLink(destination: StationView()) {
+                        Text("역 선택")
+                            .font(.title)
+                            .frame(width: 150, height: 150)
+                            .background(Color.purple)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
                 }
-                .padding()
                 
-                Spacer()
             }
         }
     }
+}
+
+#Preview {
+    LifestyleSelectionView()
 }
