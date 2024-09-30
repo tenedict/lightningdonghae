@@ -20,6 +20,7 @@
 		9D8F54022CAA7EDD00476007 /* searchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F54012CAA7ED400476007 /* searchView.swift */; };
 		9DDD7E082CAAA43C00836AF0 /* TourlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDD7E072CAAA43700836AF0 /* TourlistView.swift */; };
 		9DDD7E102CAACE0D00836AF0 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDD7E0F2CAACE0D00836AF0 /* StationView.swift */; };
+		9DDD7E122CAAD1DE00836AF0 /* StampMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDD7E112CAAD1D800836AF0 /* StampMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		9D8F54012CAA7ED400476007 /* searchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchView.swift; sourceTree = "<group>"; };
 		9DDD7E072CAAA43700836AF0 /* TourlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourlistView.swift; sourceTree = "<group>"; };
 		9DDD7E0F2CAACE0D00836AF0 /* StationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
+		9DDD7E112CAAD1D800836AF0 /* StampMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,10 @@
 		9D87200E2CA2B86400755EEB /* lightningdonghae */ = {
 			isa = PBXGroup;
 			children = (
+				9DDD7E112CAAD1D800836AF0 /* StampMapView.swift */,
+
 				897BC1522CAAD20B00642824 /* MainViewGroup */,
+
 				9DDD7E072CAAA43700836AF0 /* TourlistView.swift */,
 				9D8F54012CAA7ED400476007 /* searchView.swift */,
 				9D1B3B952CA2DD5F0070B0FB /* LifestyleDetailView.swift */,
@@ -172,6 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				9DDD7E122CAAD1DE00836AF0 /* StampMapView.swift in Sources */,
+
 				897BC1562CAAD24600642824 /* TodayRecommendedCard.swift in Sources */,
 				9D8F54022CAA7EDD00476007 /* searchView.swift in Sources */,
 				9DDD7E102CAACE0D00836AF0 /* StationView.swift in Sources */,
