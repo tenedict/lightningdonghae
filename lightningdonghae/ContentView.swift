@@ -16,7 +16,7 @@ struct ContentView: View {
                     Text("지하철 노선도")
                 }
 
-            LifestyleSelectionView() // 두 번째 탭: 라이프스타일 및 도착역 선택
+            TourlistView() // 두 번째 탭: 라이프스타일 및 도착역 선택
                 .tabItem {
                     Image(systemName: "square.grid.2x2.fill")
                     Text("라이프스타일 선택")
