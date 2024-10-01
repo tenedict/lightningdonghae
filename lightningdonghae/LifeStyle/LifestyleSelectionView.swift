@@ -32,7 +32,7 @@ struct LifestyleSelectionView: View {
                     }
 
                     
-                    NavigationLink(destination: StationView()) {
+                    NavigationLink(destination: SelectArrivalStation()) {
                         Text("역 선택")
                             .font(.title)
                             .frame(width: 150, height: 150)
