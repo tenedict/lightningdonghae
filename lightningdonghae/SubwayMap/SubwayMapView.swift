@@ -41,7 +41,7 @@ struct SubwayMapView: View {
             .sheet(isPresented: $isSheetPresented) {
                 if let station = selectedStation {
                     StationDetailView(station: station)
-                        .presentationDetents([.height(300)])
+                        .presentationDetents([.height(200)])
                 }
             }
         }.preferredColorScheme(.light)
@@ -161,20 +161,6 @@ struct StationButton: View {
             }
         }
         .frame(width: 60, height: 100)
-    }
-}
-
-struct StationDetailView: View {
-    let station: String
-    
-    var body: some View {
-        VStack {
-            Text("\(station) 역")
-                .font(.headline)
-            Text("여기에 \(station) 역에 대한 정보를 추가하세요.")
-                .font(.subheadline)
-        }
-        .padding()
     }
 }
 

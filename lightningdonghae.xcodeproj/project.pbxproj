@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613D77482CABB71700F9297B /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D77472CABB71700F9297B /* StationDetailView.swift */; };
 		897BC1562CAAD24600642824 /* TodayRecommendedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC1552CAAD24600642824 /* TodayRecommendedCard.swift */; };
 		9D1B3B902CA2BDF10070B0FB /* LifestyleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */; };
 		9D1B3B922CA2BDFA0070B0FB /* SubwayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		613D77472CABB71700F9297B /* StationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailView.swift; sourceTree = "<group>"; };
 		897BC1552CAAD24600642824 /* TodayRecommendedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecommendedCard.swift; sourceTree = "<group>"; };
 		9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleSelectionView.swift; sourceTree = "<group>"; };
 		9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayMapView.swift; sourceTree = "<group>"; };
@@ -50,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		613D77492CABB71B00F9297B /* SubwayMap */ = {
+			isa = PBXGroup;
+			children = (
+				9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */,
+				613D77472CABB71700F9297B /* StationDetailView.swift */,
+			);
+			path = SubwayMap;
+			sourceTree = "<group>";
+		};
 		897BC1522CAAD20B00642824 /* MainViewGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +93,8 @@
 				9DDD7E072CAAA43700836AF0 /* TourlistView.swift */,
 				9D8F54012CAA7ED400476007 /* searchView.swift */,
 				9D1B3B952CA2DD5F0070B0FB /* LifestyleDetailView.swift */,
+				613D77492CABB71B00F9297B /* SubwayMap */,
 				9D1B3B932CA2BE110070B0FB /* MyPageView.swift */,
-				9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */,
 				9DDD7E0F2CAACE0D00836AF0 /* StationView.swift */,
 				9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */,
 				9D87200F2CA2B86400755EEB /* lightningdonghaeApp.swift */,
@@ -173,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DDD7E122CAAD1DE00836AF0 /* StampMapView.swift in Sources */,
+				613D77482CABB71700F9297B /* StationDetailView.swift in Sources */,
 				897BC1562CAAD24600642824 /* TodayRecommendedCard.swift in Sources */,
 				9D8F54022CAA7EDD00476007 /* searchView.swift in Sources */,
 				9DDD7E102CAACE0D00836AF0 /* StationView.swift in Sources */,
