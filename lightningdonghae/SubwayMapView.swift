@@ -1,126 +1,185 @@
-//
-//  Untitled.swift
-//  lightningdonghae
-//
-//  Created by 문재윤 on 9/24/24.
-//
 import SwiftUI
 
 struct SubwayMapView: View {
+    @State private var selectedStation: String?
+    @State private var isSheetPresented = false
     
-    // 동해선 역 목록
     let stations = [
-        "부전", "거제해맞이", "거제", "부산교대", "동래", "안락", "부산원동",
-        "재송", "센텀", "벡스코", "신해운대", "송정", "오시리아", "기장", "일광",
-        "좌천", "월내", "서생", "남창", "망양", "덕하", "개운포", "태화강"
+        ["부전", "거제해맞이", "거제", "부산교대", "동래", "안락"],
+        ["송정", "신해운대", "벡스코", "센텀","재송","부산원동"],
+        ["오시리아", "기장", "일광", "좌천", "월내", "서생"],
+        ["태화강", "개운포", "덕하", "망양", "남창"]
     ]
     
-    // 각 역을 S자 형태로 배치하는 좌표
-    let stationCoordinates: [CGPoint] = [
-        CGPoint(x: 40, y: 100), CGPoint(x: 140, y: 100), CGPoint(x: 240, y: 100),
-        CGPoint(x: 340, y: 100), CGPoint(x: 340, y: 180), CGPoint(x: 240, y: 180),
-        CGPoint(x: 140, y: 180), CGPoint(x: 40, y: 180), CGPoint(x: 40, y: 260),
-        CGPoint(x: 140, y: 260), CGPoint(x: 240, y: 260), CGPoint(x: 340, y: 260),
-        CGPoint(x: 340, y: 340), CGPoint(x: 240, y: 340), CGPoint(x: 140, y: 340),
-        CGPoint(x: 40, y: 340), CGPoint(x: 40, y: 420), CGPoint(x: 140, y: 420),
-        CGPoint(x: 240, y: 420), CGPoint(x: 340, y: 420), CGPoint(x: 340, y: 500),
-        CGPoint(x: 190, y: 500), CGPoint(x: 40, y: 500)
-    ]
-    
-    @State private var selectedStation: String? = nil
-    @State private var nextTrainTimes: (Int, Int)? = nil // 다음 열차와 부전행, 태화강행 시간
-    @State private var showInfo: Bool = false // 정보를 표시할지 여부
     
     var body: some View {
-        VStack {
-            ScrollView {
+        NavigationView {
+            VStack(spacing: 0) {
+                Text("동해선 노선표")
+                    .font(.system(size: 20))
+                    .fontWeight(.heavy)
+                    .padding(.bottom, 20)
+                    .padding(.top, 20)
+                
                 ZStack {
-                    // 파란색 노선 그리기
-                    Path { path in
-                        path.move(to: stationCoordinates.first!)
-                        for point in stationCoordinates {
-                            path.addLine(to: point)
+                    SubwayLines()
+                    VStack(alignment: .leading, spacing: 40) {
+                        ForEach(0..<4) { index in
+                            HStack(spacing: 0) {
+                                ForEach(stations[index], id: \.self) { station in
+                                    StationButton(station: station, selectedStation: $selectedStation, isSheetPresented: $isSheetPresented)
+                                }
+                            }
                         }
                     }
-                    .stroke(Color.blue, lineWidth: 4)
-                    
-                    // 각 역을 버튼으로 표시
-                    ForEach(Array(stations.enumerated()), id: \.element) { index, station in
-                        let coordinate = stationCoordinates[index]
-                        Button(action: {
-                            // 역을 클릭했을 때 배차 정보를 표시
-                            selectedStation = station
-                            nextTrainTimes = calculateNextTrainTimes()
-                            showInfo = true
-                        }) {
-                            Text(station)
-                                .padding(5)
-                                .background(Color.white)
-                                .cornerRadius(8)
-                                .shadow(radius: 2)
-                        }
-                        .position(x: coordinate.x, y: coordinate.y)
-                    }
+                   
                 }
-//                .frame(minHeight: 1300) // 전체 뷰 크기 설정
+//                .padding()
+                
+                Spacer()
             }
-            
-            // 정보 박스
-            if showInfo, let station = selectedStation, let times = nextTrainTimes {
-                VStack {
-                    Text(station)
-                        .font(.headline)
-                        .padding(10)
-                        .background(Color.blue.opacity(0.2))
-                        .cornerRadius(10)
-                    
-                    HStack {
-                        VStack {
-                            Text("태화강행")
-                            Text("\(times.0) 분 후")
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .shadow(radius: 2)
-                        
-                        VStack {
-                            Text("부전행")
-                            Text("\(times.1) 분 후")
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .shadow(radius: 2)
-                    }
-                    .padding(.horizontal)
-                    
-                    Divider()
+            .sheet(isPresented: $isSheetPresented) {
+                if let station = selectedStation {
+                    StationDetailView(station: station)
+                        .presentationDetents([.height(300)])
                 }
-                .padding()
             }
-        }
-    }
-    
-    // 현재 시간에 따른 다음 열차 도착 시간을 계산하는 함수
-    func calculateNextTrainTimes() -> (Int, Int) {
-        let currentDate = Date()
-        let calendar = Calendar.current
-        let currentMinute = calendar.component(.minute, from: currentDate)
-        
-        // 10분 단위로 배차된 시간표를 기준으로 계산
-        let minutesUntilNextTrain = 10 - (currentMinute % 10)
-        
-        // 부전행과 태화강행 열차 도착 시간
-        let minutesUntilBujeon = minutesUntilNextTrain
-        let minutesUntilTaehwagang = minutesUntilNextTrain + 5 // 예시로 5분 후 도착
-        
-        return (minutesUntilNextTrain, minutesUntilTaehwagang)
+        }.preferredColorScheme(.light)
     }
 }
 
-#Preview {
-    SubwayMapView()
+struct SubwayLines: View {
+    var body: some View {
+        GeometryReader { geometry in
+            Path { path in
+                let width = geometry.size.width
+                let height = geometry.size.height
+                let lineSpacing = height / 4.5 // 라인 간의 간격 조정
+                let space: CGFloat = 20
+                let cornerRadius: CGFloat = 20 // 둥글게 할 반지름
+
+                // 첫 번째 수평선
+                path.move(to: CGPoint(x: space, y: 58)) // 시작점
+                path.addLine(to: CGPoint(x: width - space - cornerRadius, y: 58)) // 첫 수평선
+
+                // 첫 번째 라운드 코너 (오른쪽 위)
+                path.addArc(center: CGPoint(x: width - space - cornerRadius, y: 58 + cornerRadius),
+                            radius: cornerRadius,
+                            startAngle: .degrees(270),
+                            endAngle: .degrees(0),
+                            clockwise: false)
+
+                // 첫 번째 수직선
+                path.addLine(to: CGPoint(x: width - space, y: 58 + lineSpacing - cornerRadius))
+
+                // 두 번째 라운드 코너 (오른쪽 아래)
+                path.addArc(center: CGPoint(x: width - space - cornerRadius, y: 58 + lineSpacing - cornerRadius),
+                            radius: cornerRadius,
+                            startAngle: .degrees(0),
+                            endAngle: .degrees(90),
+                            clockwise: false)
+
+                // 두 번째 수평선
+                path.addLine(to: CGPoint(x: space + cornerRadius - 10, y: 58 + lineSpacing))
+
+//                // 세 번째 라운드 코너 (왼쪽 위)
+//                path.addArc(center: CGPoint(x: space + cornerRadius, y: 58 + lineSpacing + cornerRadius),
+//                            radius: cornerRadius,
+//                            startAngle: .degrees(-180),
+//                            endAngle: .degrees(-90),
+//                            clockwise: false)
+
+//                 두 번째 수직선
+                path.addLine(to: CGPoint(x: space + cornerRadius - 10, y: 55 + 2 * lineSpacing ))
+
+//                // 네 번째 라운드 코너 (왼쪽 아래)
+//                path.addArc(center: CGPoint(x: space + cornerRadius, y: 55 + 2 * lineSpacing - cornerRadius),
+//                            radius: cornerRadius,
+//                            startAngle: .degrees(90),
+//                            endAngle: .degrees(180),
+//                            clockwise: false)
+
+                // 세 번째 수평선
+                path.addLine(to: CGPoint(x: width - space - cornerRadius, y: 55 + 2 * lineSpacing ))
+
+                // 다섯 번째 라운드 코너 (오른쪽 위)
+                path.addArc(center: CGPoint(x: width - space - cornerRadius, y: 55 + 2 * lineSpacing + cornerRadius),
+                            radius: cornerRadius,
+                            startAngle: .degrees(270),
+                            endAngle: .degrees(0),
+                            clockwise: false)
+
+                // 세 번째 수직선
+                path.addLine(to: CGPoint(x: width - space, y: 55 + 3 * lineSpacing - cornerRadius))
+
+                // 여섯 번째 라운드 코너 (오른쪽 아래)
+                path.addArc(center: CGPoint(x: width - space - cornerRadius, y: 55 + 3 * lineSpacing - cornerRadius),
+                            radius: cornerRadius,
+                            startAngle: .degrees(0),
+                            endAngle: .degrees(90),
+                            clockwise: false)
+
+                // 네 번째 수평선
+                path.addLine(to: CGPoint(x: space + cornerRadius, y: 55 + 3 * lineSpacing))
+
+            }
+            .stroke(Color.blue, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)) // 선 끝 및 모서리 둥글게
+        }
+    }
+}
+
+
+
+
+
+struct StationButton: View {
+    let station: String
+    @Binding var selectedStation: String?
+    @Binding var isSheetPresented: Bool
+    
+    var body: some View {
+        Button(action: {
+            selectedStation = station
+            isSheetPresented = true
+        }) {
+            VStack(spacing: 0) {
+                Circle()
+                    .fill(Color.white) // 원의 내부를 하얗게 채움
+                    .frame(width: 16, height: 16)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.my3356B4, lineWidth: 3) // 파란색 외곽선 추가
+                    )
+                
+                Text(station)
+                    .font(.system(size: 17))
+                    .foregroundStyle(Color.black)
+                    .fontWeight(.semibold)
+                    .rotationEffect(.degrees(60))
+                    .frame(width: 60, height: 100)
+                    .offset(y: -10)
+            }
+        }
+        .frame(width: 60, height: 100)
+    }
+}
+
+struct StationDetailView: View {
+    let station: String
+    
+    var body: some View {
+        VStack {
+            Text("\(station) 역")
+                .font(.headline)
+            Text("여기에 \(station) 역에 대한 정보를 추가하세요.")
+                .font(.subheadline)
+        }
+        .padding()
+    }
+}
+
+struct SubwayMapView_Previews: PreviewProvider {
+    static var previews: some View {
+        SubwayMapView()
+    }
 }
