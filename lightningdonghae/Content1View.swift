@@ -4,10 +4,18 @@
 //
 //  Created by 문재윤 on 10/2/24.
 //
+
 import SwiftUI
 
-struct Content1View: View {
+struct ContentView: View {
     @State private var currentTime = Date()  // 현재 시간을 저장하는 변수
+    
+    // 각 역의 시간표 저장
+    let subwaySchedules: [String: [String]] = [
+        "Astation": ["05:20:00", "05:24:00", "05:31:30", "06:00:00"],
+        "Bstation": ["05:15:00", "05:25:00", "05:35:00", "05:55:00"],
+        "Cstation": ["05:18:00", "05:28:00", "05:38:00", "06:05:00"]
+    ]
     
     var body: some View {
         VStack {
@@ -16,41 +24,10 @@ struct Content1View: View {
                     Text(station)
                         .font(.headline)
                     
-                    // 주말인지 평일인지에 따라 다른 시간표를 적용
-                    if isWeekend() {
-                        // 주말 시간표
-                        if let nextUpTrain = nextTrainTime(from: subwaySchedules[station]?.weekendUp ?? [], currentTime: currentTime) {
-                            Text("Weekend Up: Next train at \(nextUpTrain)")
-                                .foregroundColor(.blue)
-                        } else {
-                            Text("Weekend Up: No more trains today")
-                                .foregroundColor(.blue)
-                        }
-                        
-                        if let nextDownTrain = nextTrainTime(from: subwaySchedules[station]?.weekendDown ?? [], currentTime: currentTime) {
-                            Text("Weekend Down: Next train at \(nextDownTrain)")
-                                .foregroundColor(.red)
-                        } else {
-                            Text("Weekend Down: No more trains today")
-                                .foregroundColor(.red)
-                        }
+                    if let nextTime = nextTrainTime(from: subwaySchedules[station] ?? [], currentTime: currentTime) {
+                        Text("Next train at: \(nextTime)")
                     } else {
-                        // 평일 시간표
-                        if let nextUpTrain = nextTrainTime(from: subwaySchedules[station]?.weekdayUp ?? [], currentTime: currentTime) {
-                            Text("Weekday Up: Next train at \(nextUpTrain)")
-                                .foregroundColor(.blue)
-                        } else {
-                            Text("Weekday Up: No more trains today")
-                                .foregroundColor(.blue)
-                        }
-                        
-                        if let nextDownTrain = nextTrainTime(from: subwaySchedules[station]?.weekdayDown ?? [], currentTime: currentTime) {
-                            Text("Weekday Down: Next train at \(nextDownTrain)")
-                                .foregroundColor(.red)
-                        } else {
-                            Text("Weekday Down: No more trains today")
-                                .foregroundColor(.red)
-                        }
+                        Text("No more trains today")
                     }
                 }
                 .padding()
@@ -83,7 +60,7 @@ struct Content1View: View {
         return nil
     }
     
-    // 다음 열차 시간을 찾는 함수 (현재 시간 이후의 가장 가까운 시간을 반환)
+    // 다음 열차 시간을 찾는 함수
     func nextTrainTime(from schedule: [String], currentTime: Date) -> String? {
         for time in schedule {
             if let trainTime = stringToDate(time), trainTime > currentTime {
@@ -91,16 +68,6 @@ struct Content1View: View {
             }
         }
         return nil  // 남은 열차가 없으면 nil 반환
-    }
-    
-    // 주말인지 판단하는 함수
-    func isWeekend() -> Bool {
-        let today = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.weekday], from: today)
-        
-        // 주말인 경우 (토요일: 7, 일요일: 1)
-        return components.weekday == 1 || components.weekday == 7
     }
 }
 #Preview {
