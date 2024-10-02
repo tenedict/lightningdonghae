@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613D77482CABB71700F9297B /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D77472CABB71700F9297B /* StationDetailView.swift */; };
+		613D774B2CABD97D00F9297B /* SelectArrivalStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D774A2CABD97D00F9297B /* SelectArrivalStation.swift */; };
+		61F084662CACD4E60027AD7E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F084652CACD4E60027AD7E /* LoginView.swift */; };
+		61F084692CACDA320027AD7E /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F084682CACDA320027AD7E /* CreateAccountView.swift */; };
 		897BC1562CAAD24600642824 /* TodayRecommendedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC1552CAAD24600642824 /* TodayRecommendedCard.swift */; };
 		9D1B3B902CA2BDF10070B0FB /* LifestyleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */; };
 		9D1B3B922CA2BDFA0070B0FB /* SubwayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		613D77472CABB71700F9297B /* StationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailView.swift; sourceTree = "<group>"; };
+		613D774A2CABD97D00F9297B /* SelectArrivalStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectArrivalStation.swift; sourceTree = "<group>"; };
+		61F084652CACD4E60027AD7E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		61F084682CACDA320027AD7E /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		897BC1552CAAD24600642824 /* TodayRecommendedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecommendedCard.swift; sourceTree = "<group>"; };
 		9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleSelectionView.swift; sourceTree = "<group>"; };
 		9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayMapView.swift; sourceTree = "<group>"; };
@@ -54,6 +62,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		613D774C2CABDA9600F9297B /* LifeStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9D1B3B952CA2DD5F0070B0FB /* LifestyleDetailView.swift */,
+				613D774A2CABD97D00F9297B /* SelectArrivalStation.swift */,
+				9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */,
+				9DDD7E0F2CAACE0D00836AF0 /* StationView.swift */,
+			);
+			path = LifeStyle;
+			sourceTree = "<group>";
+		};
+		61F084672CACD4E90027AD7E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				61F084652CACD4E60027AD7E /* LoginView.swift */,
+				61F084682CACDA320027AD7E /* CreateAccountView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		897BC1522CAAD20B00642824 /* MainViewGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +116,13 @@
 				9DDD7E072CAAA43700836AF0 /* TourlistView.swift */,
 				9D8F54012CAA7ED400476007 /* searchView.swift */,
 				9D1B3B952CA2DD5F0070B0FB /* LifestyleDetailView.swift */,
+				613D77492CABB71B00F9297B /* SubwayMap */,
 				9D1B3B932CA2BE110070B0FB /* MyPageView.swift */,
-				9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */,
 				9DDD7E0F2CAACE0D00836AF0 /* StationView.swift */,
 				9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */,
+				613D774C2CABDA9600F9297B /* LifeStyle */,
+				61F084672CACD4E90027AD7E /* Login */,
+				9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */,
 				9D87200F2CA2B86400755EEB /* lightningdonghaeApp.swift */,
 				9D8720112CA2B86400755EEB /* ContentView.swift */,
 				9D8720132CA2B86500755EEB /* Assets.xcassets */,
@@ -181,6 +212,7 @@
 				9DDD7E122CAAD1DE00836AF0 /* StampMapView.swift in Sources */,
 				9D2170162CAD7435005E4CCB /* subwaySchedules.swift in Sources */,
 				9D2170142CAD7148005E4CCB /* Content1View.swift in Sources */,
+				613D77482CABB71700F9297B /* StationDetailView.swift in Sources */,
 				897BC1562CAAD24600642824 /* TodayRecommendedCard.swift in Sources */,
 				9D8F54022CAA7EDD00476007 /* searchView.swift in Sources */,
 				9DDD7E102CAACE0D00836AF0 /* StationView.swift in Sources */,
@@ -188,7 +220,10 @@
 				9DDD7E082CAAA43C00836AF0 /* TourlistView.swift in Sources */,
 				9D1B3B902CA2BDF10070B0FB /* LifestyleSelectionView.swift in Sources */,
 				9D8720122CA2B86400755EEB /* ContentView.swift in Sources */,
+				613D774B2CABD97D00F9297B /* SelectArrivalStation.swift in Sources */,
 				9D1B3B942CA2BE130070B0FB /* MyPageView.swift in Sources */,
+				61F084692CACDA320027AD7E /* CreateAccountView.swift in Sources */,
+				61F084662CACD4E60027AD7E /* LoginView.swift in Sources */,
 				9D1B3B922CA2BDFA0070B0FB /* SubwayMapView.swift in Sources */,
 				9D8720102CA2B86400755EEB /* lightningdonghaeApp.swift in Sources */,
 			);
