@@ -25,8 +25,8 @@ struct LifestyleSelectionView: View {
                 }
                 HStack {
                     // NavigationLink로 라이프스타일 버튼을 감싸서 클릭 시 상세 화면으로 이동하게 만듦
-                    NavigationLink(destination: TourlistView()) {
-                        Text("투어 리스트")
+                    NavigationLink(destination: SelectLifeStyleView()) {
+                        Text("라이프스타일 선택하기")
                             .font(.title)
                             .frame(width: 150, height: 150)
                             .background(Color.orange)

@@ -10,6 +10,9 @@
 		613D774B2CABD97D00F9297B /* SelectArrivalStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D774A2CABD97D00F9297B /* SelectArrivalStation.swift */; };
 		61F084662CACD4E60027AD7E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F084652CACD4E60027AD7E /* LoginView.swift */; };
 		61F084692CACDA320027AD7E /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F084682CACDA320027AD7E /* CreateAccountView.swift */; };
+		61F0846B2CAD728C0027AD7E /* SelectLifeStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0846A2CAD728C0027AD7E /* SelectLifeStyleView.swift */; };
+		61F0846D2CAD77EB0027AD7E /* AILottiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0846C2CAD77EB0027AD7E /* AILottiView.swift */; };
+		61F0846F2CAD82280027AD7E /* TouristInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0846E2CAD82280027AD7E /* TouristInfo.swift */; };
 		897BC1562CAAD24600642824 /* TodayRecommendedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC1552CAAD24600642824 /* TodayRecommendedCard.swift */; };
 		9D1B3B902CA2BDF10070B0FB /* LifestyleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */; };
 		9D1B3B922CA2BDFA0070B0FB /* SubwayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */; };
@@ -29,6 +32,9 @@
 		613D774A2CABD97D00F9297B /* SelectArrivalStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectArrivalStation.swift; sourceTree = "<group>"; };
 		61F084652CACD4E60027AD7E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		61F084682CACDA320027AD7E /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		61F0846A2CAD728C0027AD7E /* SelectLifeStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLifeStyleView.swift; sourceTree = "<group>"; };
+		61F0846C2CAD77EB0027AD7E /* AILottiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILottiView.swift; sourceTree = "<group>"; };
+		61F0846E2CAD82280027AD7E /* TouristInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfo.swift; sourceTree = "<group>"; };
 		897BC1552CAAD24600642824 /* TodayRecommendedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecommendedCard.swift; sourceTree = "<group>"; };
 		9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleSelectionView.swift; sourceTree = "<group>"; };
 		9D1B3B912CA2BDF50070B0FB /* SubwayMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayMapView.swift; sourceTree = "<group>"; };
@@ -63,6 +69,8 @@
 				613D774A2CABD97D00F9297B /* SelectArrivalStation.swift */,
 				9D1B3B8F2CA2BDED0070B0FB /* LifestyleSelectionView.swift */,
 				9DDD7E0F2CAACE0D00836AF0 /* StationView.swift */,
+				61F0846A2CAD728C0027AD7E /* SelectLifeStyleView.swift */,
+				61F0846C2CAD77EB0027AD7E /* AILottiView.swift */,
 			);
 			path = LifeStyle;
 			sourceTree = "<group>";
@@ -106,6 +114,7 @@
 				9DDD7E112CAAD1D800836AF0 /* StampMapView.swift */,
 				897BC1522CAAD20B00642824 /* MainViewGroup */,
 				9DDD7E072CAAA43700836AF0 /* TourlistView.swift */,
+				61F0846E2CAD82280027AD7E /* TouristInfo.swift */,
 				9D8F54012CAA7ED400476007 /* searchView.swift */,
 				613D774C2CABDA9600F9297B /* LifeStyle */,
 				9D1B3B932CA2BE110070B0FB /* MyPageView.swift */,
@@ -204,12 +213,15 @@
 				9D1B3B962CA2DD660070B0FB /* LifestyleDetailView.swift in Sources */,
 				9DDD7E082CAAA43C00836AF0 /* TourlistView.swift in Sources */,
 				9D1B3B902CA2BDF10070B0FB /* LifestyleSelectionView.swift in Sources */,
+				61F0846F2CAD82280027AD7E /* TouristInfo.swift in Sources */,
 				9D8720122CA2B86400755EEB /* ContentView.swift in Sources */,
 				613D774B2CABD97D00F9297B /* SelectArrivalStation.swift in Sources */,
 				9D1B3B942CA2BE130070B0FB /* MyPageView.swift in Sources */,
 				61F084692CACDA320027AD7E /* CreateAccountView.swift in Sources */,
 				61F084662CACD4E60027AD7E /* LoginView.swift in Sources */,
 				9D1B3B922CA2BDFA0070B0FB /* SubwayMapView.swift in Sources */,
+				61F0846D2CAD77EB0027AD7E /* AILottiView.swift in Sources */,
+				61F0846B2CAD728C0027AD7E /* SelectLifeStyleView.swift in Sources */,
 				9D8720102CA2B86400755EEB /* lightningdonghaeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lightningdonghae/Preview Content\"";
-				DEVELOPMENT_TEAM = UW9295Z57Q;
+				DEVELOPMENT_TEAM = TA9TKWGKS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -373,7 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lightningdonghae/Preview Content\"";
-				DEVELOPMENT_TEAM = UW9295Z57Q;
+				DEVELOPMENT_TEAM = TA9TKWGKS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
