@@ -10,6 +10,9 @@ struct LifestyleSelectionView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 10) {
+                NavigationLink(destination: LoginView(), label: {
+                    Text("로그인")
+                })
                 
                 NavigationLink(destination: StampMapView()) {
                     Text("스탬프 맵")
@@ -43,7 +46,7 @@ struct LifestyleSelectionView: View {
                 }
                 
             }
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
