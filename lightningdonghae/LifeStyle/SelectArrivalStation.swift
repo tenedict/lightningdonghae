@@ -12,41 +12,45 @@ struct SelectArrivalStation: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
-                    ForEach(Array(stations.enumerated()), id: \.offset) { index, station in
-                        VStack {
-                            HStack{
-                                if index != 0 {
-                                    DottedLine() // 원으로 된 두 개의 점선
-                                        .frame(width: 4, height: 10)
-                                        .foregroundColor(.gray)
-                                        .padding(.leading, 30)
-                                }
+                Text("도착역 선택하기")
+                    .font(.title)
+                    .bold()
+                    .padding(.trailing, 190)
+                    .padding(.top)
+                ForEach(Array(stations.enumerated()), id: \.offset) { index, station in
+                    VStack {
+                        HStack{
+                            if index != 0 {
+                                DottedLine() // 원으로 된 두 개의 점선
+                                    .frame(width: 4, height: 10)
+                                    .foregroundColor(Color.my58A2F9)
+                                    .padding(.leading, 30)
+                            }
+                            Spacer()
+                        }
+                        NavigationLink(destination: EmptyView(station: station)) {
+                            HStack {
+                                Circle()
+                                    .fill(Color.my4195F9)
+                                    .frame(width: 30, height: 30)
+                                    .overlay(Text("\(index + 1)").foregroundColor(.white))
+                                
+                                Text("\(station)역")
+                                    .font(.system(size: 17))
+                                    .padding(.leading, 10)
+                                    .foregroundStyle(Color.black)
+                                
                                 Spacer()
                             }
-                            NavigationLink(destination: EmptyView(station: station)) {
-                                HStack {
-                                    Circle()
-                                        .fill(Color.blue)
-                                        .frame(width: 30, height: 30)
-                                        .overlay(Text("\(index + 1)").foregroundColor(.white))
-                                    
-                                    Text("\(station)역")
-                                        .font(.headline)
-                                        .padding(.leading, 10)
-                                    
-                                    Spacer()
-                                }
-                                .padding()
-                                .background(Color(red: 240/255, green: 248/255, blue: 255/255))
-                                .cornerRadius(10)
-                            }
+                            .padding()
+                            .background(Color.myDEE9F5)
+                            .cornerRadius(10)
+                            .frame(width: 353, height: 60)
                         }
-                        .padding(.horizontal)
                     }
+                    .padding(.horizontal)
                 }
             }
-            .navigationBarTitle("도착역 선택하기", displayMode: .inline)
         }
     }
 }
@@ -62,7 +66,15 @@ struct EmptyView: View {
                 .padding()
             Spacer()
         }
-        .navigationBarTitle("\(station)역", displayMode: .inline)
+        .navigationBarTitle("검색결과", displayMode: .inline)
+        .toolbar(content: {
+            NavigationLink(destination: LifestyleSelectionView(), label: {
+                Image(systemName: "house")
+                    .resizable()
+                    .frame(width: 25, height: 20)
+                    .foregroundStyle(Color.my147DFA)
+            })
+        })
     }
 }
 

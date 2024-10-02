@@ -43,7 +43,7 @@ struct LifestyleSelectionView: View {
                 }
                 
             }
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
